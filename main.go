@@ -13,4 +13,10 @@ func main() {
 	re_tomorrow, _ := regexp.Compile(`^(\d{2}):(\d{2})\stomorrow$`)
 	re_day, _ := regexp.Compile(`^(\d{2}):(\d{2})\s([mondaytueswhrfi]+)$`)
 
+	switch {
+	case re_hour.MatchString(run_hour):
+		matches := re_hour.FindStringSubmatch(run_hour)
+		hours, minutes := matches[1], matches[2]
+
+	}
 }
