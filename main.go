@@ -145,5 +145,7 @@ func main() {
 
 		log.Println("JST:", timeToParse, "Local:", timeParsed)
 
+		at(timeParsed)
+
 	}
 }
