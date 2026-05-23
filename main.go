@@ -1,4 +1,18 @@
 package main
+
+import (
+	"fmt"
+	"log"
+	"os"
+	"os/exec"
+	"regexp"
+	"strconv"
+	"strings"
+	"time"
+
+	"github.com/peterh/liner"
+)
+
 func translateTime(timeStr string, toTZ string) (string, error) {
 	// Kindly provided and debugged by and with Claude
 	// Don't worry, it won't explode, I already tested it ;)
