@@ -4,3 +4,5 @@ EXEC        = gota
 PREFIX     ?= $(HOME)/.local
 INSTALL_DIR = $(PREFIX)/bin
 
+.PHONY: install uninstall build clean
+
