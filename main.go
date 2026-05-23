@@ -76,5 +76,13 @@ func main() {
 		log.Printf("Hours: %s Minutes: %s\n", hours, minutes)
 
 		timeToParse := fmt.Sprintf("%s:%s", hours, minutes)
+		timeParsed, err := translateTime(timeToParse, "America/Mexico_City")
+
+		if err != nil {
+			log.Fatal(err)
+		}
+
+		log.Println("JST:", timeToParse, "Local:", timeParsed)
+
 	}
 }
