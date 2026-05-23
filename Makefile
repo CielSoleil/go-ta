@@ -6,3 +6,7 @@ INSTALL_DIR = $(PREFIX)/bin
 
 .PHONY: install uninstall build clean
 
+build:
+	mkdir -p $(BUILDDIR)
+	go build -o $(BUILDDIR)/$(EXEC) main.go
+
