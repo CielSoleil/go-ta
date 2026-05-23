@@ -24,5 +24,23 @@ func main() {
 		if err != nil {
 			log.Fatal("Couldn't convert to int")
 		}
+
+		switch cHours {
+		case 24:
+			hours = "00"
+		case 25:
+			hours = "01"
+		case 26:
+			hours = "02"
+		case 27:
+			hours = "03"
+		case 28:
+			hours = "04"
+		case 29:
+			hours = "05"
+		case 30:
+			hours = "06"
+		}
+
 	}
 }
