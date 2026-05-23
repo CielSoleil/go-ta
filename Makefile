@@ -10,3 +10,6 @@ build:
 	mkdir -p $(BUILDDIR)
 	go build -o $(BUILDDIR)/$(EXEC) main.go
 
+clean:
+	rm $(BUILDDIR)/$(EXEC)
+
