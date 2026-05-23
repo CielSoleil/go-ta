@@ -152,5 +152,10 @@ func main() {
 		amount, unit := matches[2], matches[3]
 		log.Printf("Time: %s Time unit: %s", amount, unit)
 
+	case re_tomorrow.MatchString(run_hour):
+		matches := re_tomorrow.FindStringSubmatch(run_hour)
+		hours, minutes := matches[1], matches[2]
+		log.Printf("Tomorrow at Hour: %s Minute %s", hours, minutes)
+
 	}
 }
