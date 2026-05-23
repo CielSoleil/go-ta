@@ -8,7 +8,7 @@ INSTALL_DIR = $(PREFIX)/bin
 
 build:
 	mkdir -p $(BUILDDIR)
-	go build -o $(BUILDDIR)/$(EXEC) main.go
+	go build -o $(BUILDDIR)/$(EXEC) $(GO_FILE)
 
 clean:
 	rm $(BUILDDIR)/$(EXEC)
