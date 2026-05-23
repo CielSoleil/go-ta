@@ -42,5 +42,7 @@ func main() {
 			hours = "06"
 		}
 
+		log.Printf("Hours: %s Minutes: %s\n", hours, minutes)
+
 	}
 }
