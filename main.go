@@ -117,5 +117,24 @@ func main() {
 
 		at(timeParsed)
 
+	case re_special.MatchString(run_hour):
+		matches := re_special.FindStringSubmatch(run_hour)
+		special := matches[1]
+
+		var hours string
+
+		switch special {
+		case "noon":
+			hours = "12"
+		case "teatime":
+			hours = "16"
+		case "midnight":
+			hours = "24"
+		}
+
+		minutes := "00"
+
+		log.Printf("Special: %s (Hours: %s Minutes: %s)\n", special, hours, minutes)
+
 	}
 }
