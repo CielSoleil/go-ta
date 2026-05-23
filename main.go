@@ -157,5 +157,9 @@ func main() {
 		hours, minutes := matches[1], matches[2]
 		log.Printf("Tomorrow at Hour: %s Minute %s", hours, minutes)
 
+	case re_day.MatchString(run_hour):
+		matches := re_day.FindStringSubmatch(run_hour)
+		hours, minutes, day := matches[1], matches[2], matches[3]
+		log.Printf("Day: %s Hour: %s Minute: %s", day, hours, minutes)
 	}
 }
