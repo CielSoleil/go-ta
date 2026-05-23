@@ -44,5 +44,6 @@ func main() {
 
 		log.Printf("Hours: %s Minutes: %s\n", hours, minutes)
 
+		timeToParse := fmt.Sprintf("%s:%s", hours, minutes)
 	}
 }
