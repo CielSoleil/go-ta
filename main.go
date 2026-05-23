@@ -30,6 +30,37 @@ func translateTime(timeStr string, toTZ string) (string, error) {
 	// Finally convert our LocalTime obj to Tokyo
 	return t.In(toLoc).Format("15:04"), nil
 }
+
+func at(run_time string) {
+	// Written with Gemini and Claude because "at" is a special snowflake
+	// that won't accept arguments beyond time, won't drop you into stdin
+	// unless you're in your terminal (as in your terminal prompt),
+	// so you can really only pass the command this way from here
+
+	line := liner.NewLiner()
+	defer line.Close()
+
+	line.SetCtrlCAborts(true)
+
+	input, err := line.Prompt("> ")
+
+	if err != nil {
+		if err == liner.ErrPromptAborted {
+			log.Fatal("Aborted")
+		}
+		log.Printf("Error reading line: %v", err)
+	}
+
+	cmd := exec.Command("at", run_time)
+	cmd.Stdin = strings.NewReader(input)
+
+	output, err := cmd.CombinedOutput()
+	if err != nil {
+		log.Fatalf("Error: %s\n", err)
+	}
+	log.Print(string(output))
+}
+
 func main() {
 	args := os.Args[1:]
 
