@@ -18,5 +18,11 @@ func main() {
 		matches := re_hour.FindStringSubmatch(run_hour)
 		hours, minutes := matches[1], matches[2]
 
+		// Convert hours to int for special evaluation
+		cHours, err := strconv.Atoi(hours)
+
+		if err != nil {
+			log.Fatal("Couldn't convert to int")
+		}
 	}
 }
