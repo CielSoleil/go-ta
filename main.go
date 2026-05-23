@@ -147,5 +147,10 @@ func main() {
 
 		at(timeParsed)
 
+	case re_nplus.MatchString(run_hour):
+		matches := re_nplus.FindStringSubmatch(run_hour)
+		amount, unit := matches[2], matches[3]
+		log.Printf("Time: %s Time unit: %s", amount, unit)
+
 	}
 }
