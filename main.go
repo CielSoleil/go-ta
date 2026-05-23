@@ -136,5 +136,6 @@ func main() {
 
 		log.Printf("Special: %s (Hours: %s Minutes: %s)\n", special, hours, minutes)
 
+		timeToParse := fmt.Sprintf("%s:%s", hours, minutes)
 	}
 }
