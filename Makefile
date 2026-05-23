@@ -13,3 +13,6 @@ build:
 clean:
 	rm $(BUILDDIR)/$(EXEC)
 
+install:
+	install -Dm755 $(BUILDDIR)/$(EXEC) $(INSTALL_DIR)/$(EXEC)
+
