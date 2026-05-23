@@ -16,3 +16,5 @@ clean:
 install:
 	install -Dm755 $(BUILDDIR)/$(EXEC) $(INSTALL_DIR)/$(EXEC)
 
+uninstall:
+	rm $(INSTALL_DIR)/$(EXEC)
